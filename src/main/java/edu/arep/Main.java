@@ -27,10 +27,10 @@ public class Main
      */
     public static void calculate(LinkedList list){
         double mean = 0;
-        double desviation = 0;
-        // Variables temproales, usadas en el calculo de la media y la desviación
+        double deviation = 0;
+        // Variables temporales, usadas en el calculo de la media y la desviación
         double sumOfTheMean = 0;
-        double sumOfTheDesviation = 0;
+        double sumOfTheDeviation = 0;
         double n = 0;
         while(list.hasMoreItems()){
             n++;
@@ -39,12 +39,12 @@ public class Main
         mean = sumOfTheMean/(--n);
         list.restart();
         while(list.hasMoreItems()){
-            sumOfTheDesviation+= Math.pow(list.next()-mean,2);
+            sumOfTheDeviation+= Math.pow(list.next()-mean,2);
         }
         // Al incluir el "head" dentro de la lista, se agrega un dato basura que es controlado con la siguiente sentencia.
         sumOfTheDesviation-=Math.pow(mean,2);
-        desviation = Math.sqrt(sumOfTheDesviation/(n-1));
+        deviation = Math.sqrt(sumOfTheDeviation/(n-1));
         System.out.println("The mean is: "+mean);
-        System.out.println("The desviation standard is: "+desviation);
+        System.out.println("The desviation standard is: "+deviation);
     }
 }
