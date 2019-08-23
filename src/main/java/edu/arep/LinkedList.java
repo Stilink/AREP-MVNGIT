@@ -37,7 +37,6 @@ public class LinkedList {
      * @return información guardada dentro del nodo "siguiente".
      */
     public double next() {
-        System.out.println(current.getData());
         double data = this.current.getData();
         this.current = this.current.getNext();
         return data;
